@@ -1,0 +1,12 @@
+alembic==1.14.0
+email-validator==2.2.0
+faker==33.0.0
+fastapi==0.115.5
+loguru==0.7.2
+psycopg2-binary==2.9.10
+python-decouple==3.8
+pydantic-settings==2.6.1
+rich==13.9.4
+SQLAlchemy==2.0.36
+typer==0.13.1
+uvicorn==0.32.1

@@ -80,3 +80,54 @@ A highly performant system architecture that can handle high volume of transacti
 - Models
 - Migrations
 - Unit tests
+- Python package
+- Split into services
+- Per service database
+
+### Services
+1. Auth service
+   1. Handles authentication for all user types
+   2. JWT, OAuth, etc.
+   3. `POST /auth/login`: Log user in
+   4. `POST /auth/logout`: Log user out
+   5. Access token for services to validate user request
+2. Bank service
+   1. Handles all bank related requests
+   2. `GET /banks`: Get all banks
+   3. `GET /banks/<uid>`: Get bank details
+   4. `POST /banks`: Create a bank
+   5. `PATCH /banks/<uid>`: Update bank details
+3. User service
+   1. Handles all user related requests
+   2. `GET /users`: Get all users
+   3. `GET /users/<uid>`: Get user details
+   4. `POST /users`: Create a user
+   5. `PATCH /users/<uid>`: Update user details
+4. Account service
+   1. Handles all account related requests
+   2. `GET /accounts`: Get all accounts
+   3. `GET /accounts/<uid>`: Get account details
+   4. `POST /accounts`: Create an account
+   5. `PATCH /accounts/<uid>`: Update account details
+   6. `GET /accounts/<uid>/balance`: Get account balance
+5. Transaction service
+   1. Handles all transaction related requests
+   2. `GET /transactions`: Get all transactions
+   3. `GET /transactions/<uid>`: Get transaction details
+   4. `POST /transactions`: Create a transaction
+6. Notification service
+   1. Sends out email/sms notifications to users
+   2. User login and logout notifications as per preferences
+   3. New user account creation
+   4. New bank account creation
+   5. New transaction creation
+   6. Amount credited
+   7. Amount deducted
+   8. Balance enquiry
+   9. Transaction success
+   9. Transaction failure
+7. Logging service
+   1. Sidecar pattern
+8. Monitoring service
+   1. Handles request to monitor health of services
+   2. Logs of all operations, service wise, etc.
